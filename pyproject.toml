@@ -1,0 +1,28 @@
+[project]
+name = "trueguard-mcp"
+version = "0.2.0"
+description = "Agentic DevOps & Incident Escalation Harness"
+requires-python = ">=3.11"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+disallow_untyped_defs = true
+disallow_any_generics = true
+ignore_missing_imports = true
+plugins = ["pydantic.mypy"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "TID", "RUF"]
+ignore = ["E501"]
